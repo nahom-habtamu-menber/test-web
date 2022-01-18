@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before-install:
+  - docker build -t nahomhabtamu/test-web -f Dockerfile.dev
+script:
+  - docker run nahomhabtamu/test-web npm run test -- --coverage
